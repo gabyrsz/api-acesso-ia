@@ -65,9 +65,9 @@ namespace api_acesso_ia.Controllers
         }
 
         [HttpPut("redefinir-senha/{idUsuario}")]
-        public async Task<IActionResult> RedefinirSenha(int idUsuario)
+        public async Task<IActionResult> RedefinirSenha(int idUsuario, [FromBody] RedefinirSenhaRequest dados)
         {
-            var redefinida = await _loginService.RedefinirSenhaService(idUsuario);
+            var redefinida = await _loginService.RedefinirSenhaService(idUsuario, dados.SenhaNova);
 
             if (!redefinida)
                 return NotFound("O usuário não foi encontrado");

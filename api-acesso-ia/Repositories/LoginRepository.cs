@@ -26,7 +26,7 @@ namespace api_acesso_ia.Repositories
         }
         public async Task<Login> Autenticar(string login, string senha)
         {
-            return await _context.Logins.FirstOrDefaultAsync(l => l.Login_usuario == login && l.Senha == senha);
+            return await _context.Logins.Where(l => l.Login_usuario == login && l.Senha == senha).FirstOrDefaultAsync();
         }
 
         public async Task<Login> Cadastrar(Login dados)
