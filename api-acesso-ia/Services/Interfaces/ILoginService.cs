@@ -26,7 +26,7 @@ namespace api_acesso_ia.Services.Interfaces
         Task<Login> BuscarEmailService(string email);
 
 
-        Task<bool> RedefinirSenhaService(int idUsuario);
+        Task<bool> RedefinirSenhaService(int idUsuario, string SenhaNova);
 
 
     }
